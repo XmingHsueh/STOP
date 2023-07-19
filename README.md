@@ -2,33 +2,34 @@
 
 ## A Benchmark Suite of Sequential Transfer Optimization Problems (STOPs)
 
-This repository provides the MATLAB implementation of generating a benchmark suite of sequential transfer optimization problems (STOPs). To instantiate an STOP, we need to set up the following five parameters: the target family, the transfer scenario, the similarity distribution, the task dimension, and the number of source tasks. Their available realizations are as follows:
+This repository provides the MATLAB implementation of generating a benchmark suite of sequential transfer optimization problems (STOPs). To instantiate an STOP, we need to set up the following six parameters: the target family, the transfer scenario, the optimum optimum, the similarity distribution, the task dimension, and the number of source tasks. Their available realizations are as follows:
 
 * Task families (F): `Sphere`, `Ellipsoid`, `Schwefel`, `Quartic`, `Ackley`, `Rastrigin`, `Griewank`, and `Levy`.
 * Transfer scenarios (T): `Ta` and `Te`.
-* Similarity distributions (h): `h1`, `h2`, `m1`, `m2`, `m3`, `m4`, `l1`, `l2`.
+* Optimum coverages (xi): 0, 0.7, 1.
+* Similarity distributions (p): `c`, `u`, `i`, `d`.
 * Task dimensions (d): positive integers.
 * Numbers of source tasks (k): positive integers.
 
-In this work, we name an STOP as F-T-h-d-k, where F denotes the target family, T represents the transfer scenario, h represents the similarity distribution, d denotes the task dimension, k is the number of source tasks. According to this naming rule, we specify the following 12 STOPs to form the benchmark suite,
+In this work, we name an STOP as F-T-xi-p-d-k, where F denotes the target family, T represents the transfer scenario, xi is the optimum coverage, p represents the similarity distribution, d denotes the task dimension, k is the number of source tasks. According to this naming rule, we specify the following 12 STOPs to form the benchmark suite,
 
 
 |Problem ID|Problem Specification|
 |:-|:-|
-|STOP 1|Sphere-Ta-h1-50-k|
-|STOP 2|Ellipsoid-Te-h2-25-k|
-|STOP 3|Schwefel-Ta-h2-30-k|
-|STOP 4|Quartic-Te-h1-50-k|
-|STOP 5|Ackley-Ta-m1-25-k|
-|STOP 6|Rastrigin-Te-m2-50-k|
-|STOP 7|Griewank-Ta-m3-25-k|
-|STOP 8|Levy-Te-m4-30-k|
-|STOP 9|Sphere-Ta-l1-25-k|
-|STOP 10|Rastrigin-Te-l2-30-k|
-|STOP 11|Ackley-Ta-l2-50-k|
-|STOP 12|Ellipsoid-Te-l1-50-k|
+|STOP 1|Sphere-Ta-xi0-pc-50-k|
+|STOP 2|Ellipsoid-Te-xi0-pu-25-k|
+|STOP 3|Schwefel-Ta-xi0-pi-30-k|
+|STOP 4|Quartic-Te-xi0-pd-50-k|
+|STOP 5|Ackley-Ta-xi1-pi-25-k|
+|STOP 6|Rastrigin-Te-xi1-pu-50-k|
+|STOP 7|Griewank-Ta-xi0.7-pi-25-k|
+|STOP 8|Levy-Te-xi1-pd-30-k|
+|STOP 9|Sphere-Ta-xi1-pc-25-k|
+|STOP 10|Rastrigin-Te-xi0.7-pc-30-k|
+|STOP 11|Ackley-Ta-xi0.7-pc-50-k|
+|STOP 12|Ellipsoid-Te-xi1-pc-50-k|
 
-In this repository, we employ two backbone optimizers, i.e., evolutionary algorithm (EA) and surrogate-assisted evolutionary algorithm (SAEA), to denmonstrate the generation process of the 12 STOPs, whose scripts can be found at [STOP-EA](https://github.com/XmingHsueh/STOP/blob/main/main_generation_ea.m) and [STOP-SAEA](https://github.com/XmingHsueh/STOP/blob/main/main_generation_saea.m), respectively.
+In this repository, we employ evolutionary algorithm (EA) to denmonstrate the generation process of the 12 STOPs, whose scripts can be found at [STOP-EA](https://github.com/XmingHsueh/STOP/blob/main/main_generation_ea.m).
 
 ## Citation
 
